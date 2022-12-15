@@ -6,7 +6,7 @@
 #Philotrack custom ignore
 API/.vscode
 API/.vs
-
+PhTrack/.angular
 # User-specific files
 *.rsuser
 *.suo

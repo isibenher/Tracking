@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InfoComponent } from './components/info/info.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component'
 import { UserComponent } from './components/user/user.component';
 import { SidenavWrapperComponent } from './components/sidenav-wrapper/sidenav-wrapper.component';
 
 const routes: Routes = [
-  // Sidenavwrapper Component acts like a shell & the active child Component gets rendered into the <router-outlet>
+  
   {
     path: '',
     component: SidenavWrapperComponent,
@@ -22,12 +23,16 @@ const routes: Routes = [
       {
         path: 'user',
         component: UserComponent
+      },
+      {
+        path: 'landing-page',
+        component: LandingPageComponent
       }
     ]
   },
   {
     path: '**',
-    redirectTo: '/dashboard',
+    redirectTo: '/landing-page',
     pathMatch: 'full'
   }
 ];

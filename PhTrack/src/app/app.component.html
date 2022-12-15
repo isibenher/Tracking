@@ -1,40 +1,41 @@
-<!-- <mat-drawer-container style="height:100%" class="example-container" hasBackdrop="false" class="mat-side" autosize>
-  <mat-drawer mode="side" #drawer [(opened)]="opened" 
-    style="min-width:30px; ">
-    <button mat-mini-fab (click)="opened = !opened" color="warn" style="margin: 10px;">
-      <mat-icon aria-label="Menu">menu</mat-icon>
-    </button>
-    <mat-nav-list>
-      <mat-list-item>
-        <mat-icon mat-list-icon>person</mat-icon>
-        <h4 mat-line *ngIf="opened">Management A</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon mat-list-icon>assignment</mat-icon>
-        <h4 mat-line *ngIf="opened">Management B</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon mat-list-icon>domain</mat-icon>
-        <h4 mat-line *ngIf="opened">Management C</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-icon mat-list-icon>folder_shared</mat-icon>
-        <h4 mat-line *ngIf="opened">Management X</h4>
-      </mat-list-item>
-    </mat-nav-list>
-    </mat-drawer>
-  <mat-drawer-content>
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <button mat-icon-button (click)="opened = !opened">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span class="flexExpand"></span>
-        <button mat-icon-button (click)="opened = !opened">
-          <mat-icon>person</mat-icon>
-        </button>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  </mat-drawer-content>
-</mat-drawer-container> -->
-<router-outlet></router-outlet>
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="opened">
+      <mat-nav-list>
+  
+        <mat-list-item (click)="opened = !opened">
+          <mat-icon  [ngClass]="{ rotated: opened }">menu
+          </mat-icon>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'dashboard'">
+          <mat-icon mat-list-icon>home</mat-icon>
+          <span *ngIf="opened" class="menu-item">Dashboard</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'info'">
+          <mat-icon mat-list-icon>important_devices</mat-icon>
+          <span *ngIf="opened" class="menu-item">Info</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span *ngIf="opened" class="menu-item">User</span>
+        </mat-list-item>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span class="flexExpand"></span>
+          <button mat-icon-button (click)="opened = !opened">
+            <mat-icon>person</mat-icon>
+          </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>

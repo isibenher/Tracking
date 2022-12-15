@@ -1,12 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {LandingPageComponent} from './dashboard/components/landing-page/landing-page.component'
+import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
+import { InfoComponent } from './dashboard/components/info/info.component';
+import { UserComponent } from './dashboard/components/user/user.component';
 
 const routes: Routes = [
   // lazy loaded dashboard module
   {
     path: '',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    component:LandingPageComponent
   },
+  
+    {
+      path: 'dashboard',
+      component: DashboardComponent
+    },
+    {
+      path: 'info',
+      component: InfoComponent
+    },
+    {
+      path: 'user',
+      component: UserComponent
+    },
+    {
+      path: 'landing-page',
+      component: LandingPageComponent
+    },
   {
     path: '**',
     redirectTo: '',
