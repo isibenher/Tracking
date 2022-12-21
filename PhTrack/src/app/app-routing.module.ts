@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LandingPageComponent} from './dashboard/components/landing-page/landing-page.component'
+import { LandingPageComponent} from './dashboard/components/landing-page/landing-page.component'
 import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
 import { InfoComponent } from './dashboard/components/info/info.component';
 import { UserComponent } from './dashboard/components/user/user.component';
+import { ProjectListComponent } from './dashboard/components/projects/project-list/project-list.component';
 
 const routes: Routes = [
   // lazy loaded dashboard module
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
       path: 'landing-page',
       component: LandingPageComponent
+    },
+    {
+      path: 'projects',
+      component: ProjectListComponent
     },
   {
     path: '**',

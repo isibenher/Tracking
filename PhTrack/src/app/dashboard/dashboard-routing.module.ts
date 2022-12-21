@@ -4,10 +4,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InfoComponent } from './components/info/info.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component'
 import { UserComponent } from './components/user/user.component';
+import { ProjectListComponent } from './components/projects/project-list/project-list.component';
 import { SidenavWrapperComponent } from './components/sidenav-wrapper/sidenav-wrapper.component';
 
 const routes: Routes = [
-  
+
   {
     path: '',
     component: SidenavWrapperComponent,
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'landing-page',
         component: LandingPageComponent
+      },
+      {
+        path:'projects',
+        component:ProjectListComponent
       }
     ]
   },

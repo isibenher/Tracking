@@ -1,41 +1,38 @@
-<mat-sidenav-container autosize>
-    <mat-sidenav #sidenav mode="side" opened="opened">
-      <mat-nav-list>
-  
-        <mat-list-item (click)="opened = !opened">
-          <mat-icon  [ngClass]="{ rotated: opened }">menu
-          </mat-icon>
-        </mat-list-item>
-  
-        <mat-list-item [routerLink]="'dashboard'">
-          <mat-icon mat-list-icon>home</mat-icon>
-          <span *ngIf="opened" class="menu-item">Dashboard</span>
-        </mat-list-item>
-  
-        <mat-list-item [routerLink]="'info'">
-          <mat-icon mat-list-icon>important_devices</mat-icon>
-          <span *ngIf="opened" class="menu-item">Info</span>
-        </mat-list-item>
-  
-        <mat-list-item [routerLink]="'user'">
-          <mat-icon mat-list-icon>supervisor_account</mat-icon>
-          <span *ngIf="opened" class="menu-item">User</span>
-        </mat-list-item>
-  
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        <mat-toolbar-row>
-          <span class="flexExpand"></span>
-          <button mat-icon-button (click)="opened = !opened">
-            <mat-icon>person</mat-icon>
-          </button>
+<mat-drawer-container autosize>
+  <mat-drawer #sidenav mode="side" opened="opened">
+    <mat-nav-list>
+      <mat-list-item (click)="opened = !opened">
+        <img *ngIf="opened" src="assets/images/Philotechwhite.png" alt="image" width="150px;">
+        <mat-icon [ngClass]="{ rotated: opened }">menu
+        </mat-icon>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'dashboard'">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span *ngIf="opened" class="menu-item">Dashboard</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'info'">
+        <mat-icon mat-list-icon>important_devices</mat-icon>
+        <span *ngIf="opened" class="menu-item">Info</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'user'">
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+        <span *ngIf="opened" class="menu-item">User</span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="'projects'">
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <span *ngIf="opened" class="menu-item">Projects</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content style="height: 100%;">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span class="flexExpand"></span>
+        <button mat-icon-button (click)="opened = !opened">
+          <mat-icon>person</mat-icon>
+        </button>
       </mat-toolbar-row>
     </mat-toolbar>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  
-  </mat-sidenav-container>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
